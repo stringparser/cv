@@ -10,7 +10,7 @@ export default function Layout(props) {
         <meta name="robots" content="index, follow" />
         <style id="css" dangerouslySetInnerHTML={{ __html: props.css }} />
       </head>
-      <body className="layout">
+      <body className="flex-column">
         {props.children}
       </body>
     </html>
