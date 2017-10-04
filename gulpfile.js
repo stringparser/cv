@@ -4,6 +4,7 @@ import del from 'del';
 import util from 'util';
 import path from 'path';
 import fetch from 'node-fetch';
+import htmlToPdf from 'html-pdf';
 import ReactDOMServer from 'react-dom/server';
 
 import gulp from 'gulp';
@@ -35,7 +36,7 @@ gulp.task('watch', function () {
   browserSync({
     open: false,
     server: './build',
-    files: [ './build/**' ]
+    files: [ './build/**/*.{css,html}' ]
   });
 
   gulp.watch('./src/**/*', gulp.task('default'));
@@ -52,18 +53,21 @@ gulp.task('render', function (done) {
           props.css = css.toString('utf8');
           return props;
         })
-        ;
+      ;
     })
     .then(props => {
-      return ReactDOMServer.renderToStaticMarkup(Index(props))
+      return ReactDOMServer.renderToStaticMarkup(Index(props));
     })
-    .then(staticMarkup => {
+    .then(html => {
+      const outputFile = 'build/index';
+
       fs.mkdir('build', function (mkdirError) {
-        fs.writeFile('build/index.html', staticMarkup, function (writeFileError) {
-          if (writeFileError) {
-            throw writeFileError;
-          }
-        });
+        fs.writeFile(`${outputFile}.html`, html, done);
+
+        htmlToPdf
+          .create(html, { options: 'A4' })
+          .toFile(`${outputFile}.pdf`, done)
+        ;
       });
     })
   ;
