@@ -1,0 +1,35 @@
+
+@import url('//fonts.googleapis.com/css?family=Lato:300,400,600,700');
+@import url('//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.flex-column {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.thumbnail {
+  max-height: 15px;
+}
+.thumbnail__src {
+  border-radius: 4px;
+}
