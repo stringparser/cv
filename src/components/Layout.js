@@ -1,7 +1,9 @@
 
 import React from 'react';
 
-export default function Layout(props) {
+import { classes } from '../util';
+
+export default function Layout(props = {}) {
   return (
     <html lang="en">
       <head>
@@ -10,7 +12,7 @@ export default function Layout(props) {
         <meta name="robots" content="index, follow" />
         <style id="css" dangerouslySetInnerHTML={{ __html: props.css }} />
       </head>
-      <body className="flex-column">
+      <body className={classes("flex-column", props.className)}>
         {props.children}
       </body>
     </html>

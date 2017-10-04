@@ -1,9 +1,11 @@
 
+
 import fs from 'fs';
 import del from 'del';
 import util from 'util';
 import path from 'path';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
 import htmlToPdf from 'html-pdf';
 import ReactDOMServer from 'react-dom/server';
 
@@ -12,7 +14,10 @@ import less from 'gulp-less';
 import concat from 'gulp-concat';
 import cssmin from 'gulp-cssmin';
 
+dotenv.config();
+
 const readFile = util.promisify(fs.readFile);
+const GITHUB_API_TOKEN = process.env.GITHUB_API_TOKEN;
 
 gulp.task('rm', function (done) {
   del.sync(['./build']);
@@ -43,9 +48,16 @@ gulp.task('watch', function () {
 });
 
 gulp.task('render', function (done) {
-  const Index = require('./src/Index').default;
+  const indexFilename = path.resolve('.', 'src', 'Index');
 
-  return fetch('https://api.github.com/users/stringparser')
+  delete require.cache[indexFilename];
+  const Index = require(indexFilename).default;
+
+  return fetch('https://api.github.com/users/stringparser', {
+    headers: {
+      'Authorization': `token ${GITHUB_API_TOKEN}`
+    }
+  })
     .then(res => res.json())
     .then(props => {
       return readFile('build/bundle.min.css')
