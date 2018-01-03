@@ -22,7 +22,7 @@ export default function Index(props) {
         </div>
         <div className="flex__item">
           <h2 className="u-mt0">Contact</h2>
-          <ul className="list">
+          <ul className="list list_unstyled">
             <li>
               <a href={`//github.com/${props.login}`}>
                 {`github.com/${props.login}`}
@@ -39,7 +39,7 @@ export default function Index(props) {
               </a>
             </li>
             <li>
-              13353, Berlin, Germany
+              Berlin, Germany
             </li>
           </ul>
         </div>
@@ -151,11 +151,11 @@ export default function Index(props) {
         </div>
       </div>
 
-      <div className="page flex flex_justify-between">
+      <div className="page flex flex_equal flex_justify-between">
         <div className="flex__item">
           <h2>Projects</h2>
           <quote>
-            libraries or projects I'm involved with <br />
+            libraries or projects I've been involved with <br />
           </quote>
           <ul className="list list_unstyled">
             <li>
@@ -181,6 +181,150 @@ export default function Index(props) {
                 stringparser/gulp-runtime
                 </a>
               <p>An alternate interface to vinyl-fs</p>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex__item">
+          <h2>Worked with</h2>
+          <quote>
+            OS, tools, libraries and frameworks <br />
+          </quote>
+          <ul className="list list_unstyled list__items-round">
+            <li>
+              <a href="//www.apple.com/osx/">
+                osx
+              </a>
+            </li>
+            <li>
+              <a href="//www.ubuntu.com/">
+                ubuntu
+              </a>
+            </li>
+            <li>
+              <a href="//www.microsoft.com/windows">
+                windows
+              </a>
+            </li>
+            <li>
+              <a href="//git-scm.com/">
+                git
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/npm/npm">
+                npm
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/less">
+                less
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/sass/sass">
+                sass
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/jadejs/jade">
+                jade
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/faye/faye">
+                faye
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/mochajs/mocha">
+                mocha
+              </a>
+            </li>
+            <li>
+              <a href="//redis.io/">
+                redis
+              </a>
+            </li>
+            <li>
+              <a href="//redis.io/">
+                react
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/gulpjs/gulp">
+                gulp
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/nodejs">
+                nodejs
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/meteor/meteor">
+                meteor
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/jshint/jshint">
+                jshint
+              </a>
+            </li>
+            <li>
+              <a href="//eslint.org/">
+                eslint
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/lodash/lodash">
+                lodash
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/webpack/webpack">
+                webpack
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/mongodb/mongo">
+                mongodb
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/strongloop/express">
+                express
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/atom/electron">
+                electron
+              </a>
+            </li>
+            <li>
+              <a href="//mustache.github.io/">
+                mustache
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/robbyrussell/oh-my-zsh">
+                oh-my-zsh
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/substack/node-browserify">
+                browserify
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/wycats/handlebars.js">
+                handlebars
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/playframework/playframework">
+                playframework
+              </a>
             </li>
           </ul>
         </div>

@@ -26,6 +26,10 @@ body {
   flex-direction: row;
 }
 
+.flex_equal > * {
+  flex: 1;
+}
+
 .flex_center {
   align-items: center;
   justify-content: center;
@@ -85,6 +89,17 @@ quote {
 }
 .list_unstyled {
   list-style-type: none;
+}
+.list__items-round {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    margin: 5px;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.1);
+  }
 }
 
 .u-m0 {

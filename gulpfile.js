@@ -27,7 +27,9 @@ gulp.task('rm', function (done) {
 gulp.task('styles', function () {
   return gulp.src('./src/**/*.less')
     .pipe(less({
-      paths: [ path.resolve('.', 'node_modules') ]
+      paths: [
+        path.resolve('.', 'node_modules')
+      ]
     }))
     .pipe(concat('bundle.min.css'))
     .pipe(cssmin())
@@ -40,8 +42,8 @@ gulp.task('watch', function () {
 
   browserSync({
     open: false,
+    files: [ './build/**/*.{css,html}' ],
     server: './build',
-    files: [ './build/**/*.{css,html}' ]
   });
 
   gulp.watch('./src/**/*', gulp.task('default'));
