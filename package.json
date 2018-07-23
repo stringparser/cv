@@ -2,7 +2,7 @@
   "name": "@stringparser/cv",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "BABEL_DISABLECACHE=1 babel-node --presets=env,react ./node_modules/.bin/gulp",
