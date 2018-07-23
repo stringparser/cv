@@ -93,12 +93,12 @@ export default function Index(props) {
             {props.education.map((el, index) => {
               return (
                 <li key={index}>
+                  <p className="u-m0">
+                    {el.duration}. {el.location}
+                  </p>
                   <h3 className="u-m0">
                     {el.title}
                   </h3>
-                  <p className="u-m0">
-                    From {el.duration} at {el.location}
-                  </p>
                   <br />
                   {(el.description || '')
                     .trim()
@@ -117,7 +117,8 @@ export default function Index(props) {
               <hr />
               <p>
                 UGR: University of Granada <br />
-                LMU: Ludwig-Maximilians-Universität
+                LMU: Ludwig-Maximilians-Universität <br />
+                CPM: Conservatorio Profesional de Música
               </p>
             </li>
           </ul>

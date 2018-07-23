@@ -3,7 +3,8 @@ exports = module.exports = {
   login: 'stringparser',
   phone: '+49 176 3013 9466',
   email: 'stringparser@gmail.com',
-  location: 'Berlin, Germany'
+  location: 'Berlin, Germany',
+  buildFile: 'https://github.com/stringparser/cv/raw/master/dist/cv.pdf',
 };
 
 exports.languages = [
@@ -111,7 +112,7 @@ exports.education = [
     `,
   },
   {
-    title: 'Eramus Program',
+    title: 'Eramus Program, Biophysics',
     location: 'LMU (Munich, Germany)',
     duration: '09.2009-09.2010',
     description: `
@@ -120,8 +121,12 @@ exports.education = [
     `,
   },
   {
-    title: 'Piano',
-    location: 'Professional Academy of Music (Jáen, Spain)',
+    title: 'Musical studies, Piano',
+    location: 'CPM (Jáen, Spain)',
     duration: '1996-2004',
+    description: `
+      Generic and specific lectures on music theory, \
+      analysis and composition for piano.
+    `
   },
 ];
