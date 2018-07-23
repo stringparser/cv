@@ -62,7 +62,7 @@ export default function Index(props) {
               return (
                 <li key={index}>
                   <p className="u-m0">
-                    {el.duration}. {el.location}
+                    {el.duration} ({el.location})
                   </p>
                   <h3 className="u-m0">
                     {el.title}
@@ -94,7 +94,7 @@ export default function Index(props) {
               return (
                 <li key={index}>
                   <p className="u-m0">
-                    {el.duration}. {el.location}
+                    {el.duration} at {el.location}
                   </p>
                   <h3 className="u-m0">
                     {el.title}

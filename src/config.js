@@ -66,7 +66,7 @@ exports.experience = [
     link: 'https://www.home.ht',
     title: 'Growth Engineer',
     company: 'Home HT GmbH',
-    duration: 'Feb 2018 - Jul 2018',
+    duration: 'Feb 2018 - Jun 2018',
     location: 'Berlin, Germany',
     description: '',
   },
