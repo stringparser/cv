@@ -122,7 +122,7 @@ exports.education = [
   },
   {
     title: 'Musical studies, Piano',
-    location: 'CPM (Jáen, Spain)',
+    location: 'CPM (Jaén, Spain)',
     duration: '1996-2004',
     description: `
       Generic and specific lectures on music theory, \
