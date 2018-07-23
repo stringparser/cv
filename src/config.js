@@ -44,11 +44,11 @@ exports.languages = [
 
 exports.technologies = [
   'git, zsh',
+  'css, html',
   'next.js, jest',
-  'playframework',
   'sass, less, stylus',
-  'tslint, jshint, eslint',
   'MongoDB, Redis, Postgres',
+  'bootstrap, playframework',
   'Mac OS X, Ubuntu, Windows',
   'npm, yarn, nodejs, express, koa',
   'gulp, rollupjs, webpack, browserify',
