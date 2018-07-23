@@ -1,10 +1,10 @@
 
 exports = module.exports = {
+  pdf: 'https://github.com/stringparser/cv/raw/master/dist/cv.pdf',
   login: 'stringparser',
   phone: '+49 176 3013 9466',
   email: 'stringparser@gmail.com',
   location: 'Berlin, Germany',
-  buildFile: 'https://github.com/stringparser/cv/raw/master/dist/cv.pdf',
 };
 
 exports.languages = [
