@@ -1,12 +1,9 @@
-
-
 import fs from 'fs';
 import del from 'del';
 import util from 'util';
 import path from 'path';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
-import htmlToPdf from 'html-pdf';
 import ReactDOMServer from 'react-dom/server';
 
 import gulp from 'gulp';
@@ -40,27 +37,35 @@ gulp.task('styles', function () {
 gulp.task('watch', function () {
   const browserSync = require('browser-sync');
 
-  browserSync({
+  const bs = browserSync({
     open: false,
-    files: [ './build/**/*.{css,html}' ],
     server: './build',
   });
 
-  gulp.watch('./src/**/*', gulp.task('default'));
+  const reload = (done) => {
+    bs.reload();
+    if (done) { done(); }
+  };
+
+  gulp.watch('./src/**/*.js', gulp.series('render', reload));
+  gulp.watch('./src/**/*.less', gulp.series('styles', 'render', reload));
 });
 
 gulp.task('render', function (done) {
-  const indexFilename = path.resolve('.', 'src', 'Index');
+  clearRequireCache();
 
-  delete require.cache[indexFilename];
-  const Index = require(indexFilename).default;
+  const Index = require('./src/index').default;
+  const login = 'stringparser';
 
-  return fetch('https://api.github.com/users/stringparser', {
+  return fetch(`https://api.github.com/users/${login}`, {
     headers: {
       'Authorization': `token ${GITHUB_API_TOKEN}`
     }
   })
-    .then(res => res.json())
+    .then(res => Object.assign(
+      require('./src/config'),
+      res.json()
+    ))
     .then(props => {
       return readFile('build/bundle.min.css')
         .then(css => {
@@ -69,19 +74,12 @@ gulp.task('render', function (done) {
         })
       ;
     })
-    .then(props => {
-      return ReactDOMServer.renderToStaticMarkup(Index(props));
-    })
+    .then(props => (
+      ReactDOMServer.renderToStaticMarkup(Index(props))
+    ))
     .then(html => {
-      const outputFile = 'build/index';
-
-      fs.mkdir('build', function (mkdirError) {
-        fs.writeFile(`${outputFile}.html`, html, done);
-
-        htmlToPdf
-          .create(html, { options: 'A4' })
-          .toFile(`${outputFile}.pdf`, done)
-        ;
+      fs.mkdir('build', function (_) {
+        fs.writeFile('build/index.html', html, done);
       });
     })
   ;
@@ -90,3 +88,11 @@ gulp.task('render', function (done) {
 gulp.task('default',
   gulp.series('rm', 'styles', 'render')
 );
+
+function clearRequireCache() {
+  Object.keys(require.cache).forEach(id => {
+    if (!/node_modules|gulpfile/.test(id)) {
+      delete require.cache[id];
+    }
+  });
+}
