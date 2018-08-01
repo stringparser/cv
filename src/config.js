@@ -25,8 +25,12 @@ exports.languages = [
     level: 'intermediate',
   },
   {
-    name: 'JavaScript, TypeScript, CoffeeScript',
-    level: 'advanced'
+    name: 'JavaScript, CoffeeScript',
+    level: 'advanced',
+  },
+  {
+    name: 'TypeScript',
+    level: 'advanced',
   }
 ];
 
@@ -65,7 +69,7 @@ exports.experience = [
     location: 'Berlin, Germany',
     description: `
       - Added payment methods (Scala, JavaScript)
-      - Created merchant app (node, React, TypeScript)
+      - Created merchant app (React, TypeScript)
       - Migrated frontend to ES7 (Scala, JavaScript)
     `,
   },
@@ -77,8 +81,8 @@ exports.experience = [
     location: 'Berlin, Germany',
     description: `
       - Maintained integrations (JavaScript)
-      - Created build process (nodejs, CoffeeScript)
-      - Created widget versions (nodejs, CoffeeScript)
+      - Created widget versions (CoffeeScript)
+      - Created new build process (nodejs, CoffeeScript)
     `,
   },
   {
