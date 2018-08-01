@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 export default function Index(props) {
   return (
     <Layout {...props} className="ear-tr">
+      <hr className="u-unstyled" />
 
       <div className="flex flex_column">
         <h1 className="u-m0">
@@ -26,6 +27,8 @@ export default function Index(props) {
           <li>{props.location}</li>
         </ul>
       </div>
+
+      <hr className="u-unstyled" />
 
       <div className="flex flex_justify-center">
         <div className="flex__item">
@@ -77,7 +80,11 @@ export default function Index(props) {
                   {(el.description || '')
                     .trim()
                     .split('\n')
-                    .map((line, jndex) => <p key={jndex}>{line}</p>)
+                    .map((line, jndex) => (
+                      <p key={jndex} className="u-m0">
+                        {line}
+                      </p>
+                    ))
                   }
                   <br />
                 </li>
@@ -85,6 +92,7 @@ export default function Index(props) {
             })}
           </ul>
         </div>
+
         <div className="flex__item">
           <h2>
             Education
@@ -99,7 +107,6 @@ export default function Index(props) {
                   <h3 className="u-m0">
                     {el.title}
                   </h3>
-                  <br />
                   {(el.description || '')
                     .trim()
                     .split('\n')
@@ -114,7 +121,6 @@ export default function Index(props) {
               )
             })}
             <li>
-              <hr />
               <p>
                 UGR: University of Granada <br />
                 LMU: Ludwig-Maximilians-Universität <br />

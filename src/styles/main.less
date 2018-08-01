@@ -12,10 +12,6 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   max-width: 1024px;
-
-  & > * {
-    margin-top: 2rem;
-  }
 }
 
 .flex {
@@ -24,7 +20,7 @@ body {
 }
 .flex__item {
   flex: 1;
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 1.5rem 0;
 }
 .flex__item:first-of-type {
   padding-left: 0;
@@ -89,10 +85,6 @@ quote {
   border-left: 2px forestgreen solid;
 }
 
-.hr_unstyled {
-  border: none;
-}
-
 .list {
   padding-left: 0;
 }
@@ -132,6 +124,13 @@ quote {
 .u-fixed-width-45 {
   width: 45rem;
   max-width: 45rem;
+}
+.u-border_dashed {
+  border-style: dashed;
+}
+hr.u-unstyled {
+  border: none;
+  height: 10px;
 }
 
 .ear-tr {

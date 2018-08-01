@@ -9,14 +9,6 @@ exports = module.exports = {
 
 exports.languages = [
   {
-    name: 'C++',
-    level: 'intermediate',
-  },
-  {
-    name: 'Scala',
-    level: 'intermediate'
-  },
-  {
     name: 'German',
     level: 'intermediate'
   },
@@ -29,29 +21,21 @@ exports.languages = [
     level: 'native'
   },
   {
-    name: 'JavaScript',
-    level: 'advanced'
+    name: 'Scala, C++',
+    level: 'intermediate',
   },
   {
-    name: 'TypeScript',
-    level: 'advanced'
-  },
-  {
-    name: 'CoffeeScript',
+    name: 'JavaScript, TypeScript, CoffeeScript',
     level: 'advanced'
   }
 ];
 
 exports.technologies = [
-  'git, zsh',
-  'css, html',
-  'next.js, jest',
-  'sass, less, stylus',
-  'MongoDB, Redis, Postgres',
+  'MongoDB, Redis',
   'bootstrap, playframework',
-  'Mac OS X, Ubuntu, Windows',
-  'npm, yarn, nodejs, express, koa',
-  'gulp, rollupjs, webpack, browserify',
+  'npm, yarn, nodejs, expressjs, koa',
+  'git, zsh, css, html, sass, less, stylus',
+  'next.js, jest, webpack, gulp, browserify',
   'React.js, React Native, Apollo, GraphQL',
 ];
 
@@ -68,15 +52,22 @@ exports.experience = [
     company: 'Home HT GmbH',
     duration: 'Feb 2018 - Jun 2018',
     location: 'Berlin, Germany',
-    description: '',
+    description: `
+      - Migrated emails to React (TypeScript)
+      - React, React Native Engineer (TypeScript)
+    `,
   },
   {
     link: 'https://www.zalando.com',
     title: 'Software Engineer',
-    company: 'Zalando SE',
+    company: 'Zalando SE (MOVMNT)',
     duration: 'Jan 2017 - Feb 2018',
     location: 'Berlin, Germany',
-    description: '',
+    description: `
+      - Added payment methods (Scala, JavaScript)
+      - Created merchant app (node, React, TypeScript)
+      - Migrated frontend to ES7 (Scala, JavaScript)
+    `,
   },
   {
     link: 'https://www.fitanalytics.com',
@@ -84,7 +75,11 @@ exports.experience = [
     company: 'Fit Analytics GmbH',
     duration: 'Aug 2015 - Dec 2016',
     location: 'Berlin, Germany',
-    description: '',
+    description: `
+      - Maintained integrations (JavaScript)
+      - Created build process (nodejs, CoffeeScript)
+      - Created widget versions (nodejs, CoffeeScript)
+    `,
   },
   {
     link: 'https://www.ngahr.com',
@@ -92,7 +87,10 @@ exports.experience = [
     company: 'NGA HR',
     duration: 'Sep 2013 - Feb 2015',
     location: 'Granada, Spain',
-    description: '',
+    description: `
+      - Issue consultant, developer (SAPgui, ABAP)
+      - Main contact for an account in DACH region
+    `,
   }
 ];
 
