@@ -4,11 +4,11 @@
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "preserve",
-    "baseUrl": ".",
     "target": "es5",
     "strict": false,
     "noEmit": true,
     "module": "esnext",
+    "baseUrl": ".",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

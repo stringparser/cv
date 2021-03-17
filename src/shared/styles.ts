@@ -11,7 +11,7 @@ export const globalStyles = {
       fontFamily,
       textRendering: 'optimizeLegibility',
       scrollBehavior: 'smooth',
-      fontFeatureSettings: 'kern',
+      fontFeatureSettings: "'kern'",
       WebkitFontSmoothing: 'antialiased',
 
       margin: '0 auto',

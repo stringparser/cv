@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { Link, makeStyles } from '@material-ui/core';
 
 import * as config from 'src/config';
 import { globalStyles } from 'src/shared/styles';
@@ -40,20 +40,28 @@ export default function Index() {
 
   return (
     <div className={classes.root}>
-      <hr />
-
       <div>
+        <hr />
+        <hr />
+
         <h1>Javier Carrillo Milla</h1>
+        <hr />
 
         <ul className={classes.flexRow}>
           <li>
-            <a href={`tel:${props.phone}`}>{props.phone}</a>
+            <p>{props.address.street}</p>
+            <p>
+              {props.address.zip} {props.address.city}
+            </p>
           </li>
-          <li>
-            <a href={`mailto:${props.email}`}>{props.email}</a>
+          <li className={classes.flexColumn}>
+            <p>
+              <Link href={`tel:${props.phone}`}>{props.phone}</Link>
+            </p>
+            <p>
+              <Link href={`mailto:${props.email}`}>{props.email}</Link>
+            </p>
           </li>
-          {props.website && <li>{props.website}</li>}
-          <li>{props.location}</li>
         </ul>
       </div>
 
@@ -136,7 +144,7 @@ export default function Index() {
                   {el.link && (
                     <p>
                       {el.link && 'For '}
-                      {el.link && <a href={el.link}>{el.company}</a>}
+                      {el.link && <Link href={el.link}>{el.company}</Link>}
                     </p>
                   )}
 

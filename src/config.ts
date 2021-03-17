@@ -149,7 +149,11 @@ export const education = [
 export default {
   pdf: 'https://github.com/stringparser/cv/raw/master/dist/cv.pdf',
   login: 'stringparser',
-  phone: '+49 176 3013 9466',
+  phone: '+49 (0) 176 3013 9466',
   email: 'stringparser@gmail.com',
-  location: 'Berlin, Germany',
+  address: {
+    zip: process.env.NEXT_PUBLIC_ADDRESS_ZIP,
+    city: process.env.NEXT_PUBLIC_ADDRESS_CITY,
+    street: process.env.NEXT_PUBLIC_ADDRESS_STREET,
+  },
 };
