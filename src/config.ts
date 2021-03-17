@@ -47,7 +47,7 @@ export const experience = [
     description: `
       Team: 6 people. B2C. 2 devs including me. \
       Stack: Firebase, ReactNative, TypeScript, rxjs. \
-      Mobile app MVP from scratch using: Firebase, Typescript and React Native.
+      Mobile MVP from scratch using ReactNative, Firebase, Typescript, redux and rxjs.
     `,
   },
   {
@@ -57,11 +57,11 @@ export const experience = [
     duration: 'Sep 2018 - present',
     location: 'Berlin, Germany',
     description: `
-      Team: 7. B2C. 2 backend, 4 Frontend and me.
+      Team: 7. B2C. 2 backend, 4 frontend and me.
       Stack: PHP, React, redux, JS, TS, JSS, SASS.
       - Improving code quality and communication
       - Added webpack, typescript to all front-end
-      - Helping to adopt of React, redux in all products
+      - Helping to adopt React and redux in all products
     `,
   },
   {
@@ -72,9 +72,9 @@ export const experience = [
     location: 'Berlin, Germany',
     description: `
       Team: 10+. B2C. Mobile App for renting.
-      Stack: AWS, React Native, TypeScript.
-      - Emails generation to React and TypeScript
-      - Features for a React Native app in TypeScript
+      Stack: AWS, nodejs, ReactNative, TypeScript.
+      - Emails generation with React and TypeScript
+      - Features for a ReactNative app in TypeScript
     `,
   },
   {
