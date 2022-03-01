@@ -1,8 +1,8 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@material-ui/core';
 
 import { fontFamily } from 'src/shared/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily,
 

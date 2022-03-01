@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, makeStyles } from '@material-ui/core';
+import { createStyles, Link, makeStyles } from '@material-ui/core';
 
 import * as config from 'src/config';
 import { globalStyles } from 'src/shared/styles';
@@ -10,13 +10,7 @@ const props = {
   website: undefined,
 };
 
-const useStyles = makeStyles({
-  ...globalStyles,
-  root: {
-    width: '1300px',
-    margin: '0 auto',
-    padding: '2rem 2.75rem',
-  },
+const sharedStyles = createStyles({
   flexRow: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -25,6 +19,49 @@ const useStyles = makeStyles({
       marginRight: '1.5rem',
     },
   },
+});
+
+const ExperienceItem: React.FC<{ el: typeof config.experience[0] }> = ({
+  el,
+}) => {
+  return (
+    <li>
+      <p>
+        {el.duration} ({el.location})
+      </p>
+      <h3>{el.title}</h3>
+      {el.companyLink && (
+        <p>
+          {el.appName && 'On '}
+          {el.appName && el.appLink && (
+            <Link href={el.appLink}>{el.appName}</Link>
+          )}
+          {el.appLink ? ' for ' : 'For '}
+          {el.companyLink && <Link href={el.companyLink}>{el.company}</Link>}
+        </p>
+      )}
+
+      <hr />
+
+      {(el.description || '')
+        .trim()
+        .split(/[\n]+|\s{2,}/)
+        .map((line, jndex) => (
+          <p key={jndex}>{line.trim()}</p>
+        ))}
+      <br />
+    </li>
+  );
+};
+
+const useStyles = makeStyles({
+  ...globalStyles,
+  ...sharedStyles,
+  root: {
+    width: '1300px',
+    margin: '0 auto',
+    padding: '2rem 2.75rem',
+  },
   flexColumn: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -32,6 +69,9 @@ const useStyles = makeStyles({
   },
   other: {
     color: 'here',
+  },
+  pageBreak: {
+    pageBreakBefore: 'always',
   },
 });
 
@@ -133,32 +173,21 @@ export default function Index() {
           <h2>Experience</h2>
           <hr />
 
+          <h3>Freelance</h3>
+          <hr />
+
           <ul className={classes.flexRow}>
-            {props.experience.map((el, index) => {
-              return (
-                <li key={index}>
-                  <p>
-                    {el.duration} ({el.location})
-                  </p>
-                  <h3>{el.title}</h3>
-                  {el.link && (
-                    <p>
-                      {el.link && 'For '}
-                      {el.link && <Link href={el.link}>{el.company}</Link>}
-                    </p>
-                  )}
+            {props.experience.slice(0, 6).map((el, index) => {
+              return <ExperienceItem key={index} el={el} />;
+            })}
+          </ul>
 
-                  <hr />
+          <h3 className={classes.pageBreak}>Fulltime</h3>
+          <hr />
 
-                  {(el.description || '')
-                    .trim()
-                    .split('\n')
-                    .map((line, jndex) => (
-                      <p key={jndex}>{line.trim()}</p>
-                    ))}
-                  <br />
-                </li>
-              );
+          <ul className={classes.flexRow}>
+            {props.experience.slice(6).map((el, index) => {
+              return <ExperienceItem key={index} el={el} />;
             })}
           </ul>
         </div>
