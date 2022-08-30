@@ -40,16 +40,19 @@ export const technologies = [
 export const experience = [
   {
     title: 'Freelance Software Engineer',
-    appName: 'getquin',
-    appLink: 'https://www.getquin.com/',
-    company: 'Railslove GmbH',
-    companyLink: 'https://railslove.com/',
-    duration: 'Sep 2021 - Nov 2021',
+    appName: 'Lampenwelt',
+    appLink: 'https://www.lampenwelt.de/',
+    company: 'WEBTEAM LEIPZIG GmbH',
+    companyLink: 'https://wtl.de/',
+    duration: 'March 2022 - present',
     location: 'Berlin, Germany',
     description: `
-      Team: 10+. B2C.
-      Stack: ReactNative, redux, TypeScript.
-      Social network for investing on crypto with friends. Helping developing last features before app launch.
+      Team: 9. B2C.
+      7 backend devs, 1 PO and 1 Scrum Master. \
+      Stack: electronjs, express, Kafka, TypeScript. \
+      Developing apps and services used \
+      by the company internally and \
+      in marketplaces platforms.
     `,
   },
   {
@@ -64,7 +67,21 @@ export const experience = [
       Team: 6. B2B.
       2 product, 2 designer and 2 devs. \
       Stack: Next.js, redux, TypeScript. \
-      Setup for lolization for the whole app for DE, EN, and PL.
+      Setup for localization for the whole app for DE, EN, and PL.
+    `,
+  },
+  {
+    title: 'Freelance Software Engineer',
+    appName: 'getquin',
+    appLink: 'https://www.getquin.com/',
+    company: 'Railslove GmbH',
+    companyLink: 'https://railslove.com/',
+    duration: 'Sep 2021 - Nov 2021',
+    location: 'Berlin, Germany',
+    description: `
+      Team: 10+. B2C.
+      Stack: ReactNative, redux, TypeScript.
+      Social network for investing on crypto with friends. Helping developing last features before app launch.
     `,
   },
   {

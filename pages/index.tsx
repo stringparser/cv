@@ -21,15 +21,21 @@ const sharedStyles = createStyles({
   },
 });
 
-const ExperienceItem: React.FC<{ el: typeof config.experience[0] }> = ({
+export type ExperienceItemProps = {
+  el: typeof config.experience[0];
+  showTitle?: boolean;
+};
+
+const ExperienceItem: React.FC<ExperienceItemProps> = ({
   el,
+  showTitle = true,
 }) => {
   return (
     <li>
       <p>
         {el.duration} ({el.location})
       </p>
-      <h3>{el.title}</h3>
+      {showTitle && <h3>{el.title}</h3>}
       {el.companyLink && (
         <p>
           {el.appName && 'On '}
@@ -71,6 +77,7 @@ const useStyles = makeStyles({
     color: 'here',
   },
   pageBreak: {
+    marginTop: '3rem',
     pageBreakBefore: 'always',
   },
 });
@@ -106,8 +113,6 @@ export default function Index() {
       </div>
 
       <hr />
-      <hr />
-      <hr />
 
       <div className={classes.flexRow}>
         <div>
@@ -137,7 +142,6 @@ export default function Index() {
 
       <hr />
       <hr />
-      <hr />
 
       <div>
         <h2>Education</h2>
@@ -164,10 +168,6 @@ export default function Index() {
         </ul>
       </div>
 
-      <hr />
-      <hr />
-      <hr />
-
       <div className={classes.flexRow}>
         <div>
           <h2>Experience</h2>
@@ -177,8 +177,8 @@ export default function Index() {
           <hr />
 
           <ul className={classes.flexRow}>
-            {props.experience.slice(0, 6).map((el, index) => {
-              return <ExperienceItem key={index} el={el} />;
+            {props.experience.slice(0, 7).map((el, index) => {
+              return <ExperienceItem showTitle={false} key={index} el={el} />;
             })}
           </ul>
 
