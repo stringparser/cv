@@ -30,6 +30,7 @@ export const technologies = [
   'npm, yarn, lerna',
   'mocha, jest, tape',
   'MongoDB, MySQL',
+  'RabbitMQ, Kafka',
   'koa, nodejs, expressjs',
   'material-ui, nextjs, jss',
   'bootstrap, playframework',
