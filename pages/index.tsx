@@ -84,6 +84,7 @@ const useStyles = makeStyles({
 
 export default function Index() {
   const classes = useStyles();
+  const freelanceExperienceIndex = 7;
 
   return (
     <div className={classes.root}>
@@ -177,18 +178,22 @@ export default function Index() {
           <hr />
 
           <ul className={classes.flexRow}>
-            {props.experience.slice(0, 7).map((el, index) => {
-              return <ExperienceItem showTitle={false} key={index} el={el} />;
-            })}
+            {props.experience
+              .slice(0, freelanceExperienceIndex)
+              .map((el, index) => {
+                return <ExperienceItem showTitle={false} key={index} el={el} />;
+              })}
           </ul>
 
           <h3 className={classes.pageBreak}>Fulltime</h3>
           <hr />
 
           <ul className={classes.flexRow}>
-            {props.experience.slice(6).map((el, index) => {
-              return <ExperienceItem key={index} el={el} />;
-            })}
+            {props.experience
+              .slice(freelanceExperienceIndex)
+              .map((el, index) => {
+                return <ExperienceItem key={index} el={el} />;
+              })}
           </ul>
         </div>
       </div>

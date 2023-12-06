@@ -46,11 +46,11 @@ export const experience = [
     company: 'WEBTEAM LEIPZIG GmbH',
     companyLink: 'https://wtl.de/',
     duration: 'March 2022 - present',
-    location: 'Berlin, Germany',
+    location: 'Fulda, Germany',
     description: `
       Team: 9. B2C.
       7 backend devs, 1 PO and 1 Scrum Master. \
-      Stack: electronjs, express, Kafka, TypeScript. \
+      Stack: electronjs, AWS, Kafka, TypeScript. \
       Developing apps and services used \
       by the company internally and \
       in marketplaces platforms.
@@ -228,7 +228,7 @@ export const education = [
 export default {
   pdf: 'https://github.com/stringparser/cv/raw/master/dist/cv.pdf',
   login: 'stringparser',
-  phone: '+49 (0) 176 3013 9466',
+  phone: '+34 623 181 055',
   email: 'stringparser@gmail.com',
   address: {
     zip: process.env.NEXT_PUBLIC_ADDRESS_ZIP,
