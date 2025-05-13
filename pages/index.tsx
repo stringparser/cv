@@ -1,8 +1,8 @@
 import React from 'react';
-import { createStyles, Link, makeStyles } from '@material-ui/core';
+import { createStyles, makeStyles } from '@material-ui/core';
 
-import * as config from 'src/config';
-import { globalStyles } from 'src/shared/styles';
+import * as config from '../src/config';
+import { globalStyles } from '../src/shared/styles';
 
 const props = {
   ...config,
@@ -39,11 +39,9 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
       {el.companyLink && (
         <p>
           {el.appName && 'On '}
-          {el.appName && el.appLink && (
-            <Link href={el.appLink}>{el.appName}</Link>
-          )}
+          {el.appName && el.appLink && <a href={el.appLink}>{el.appName}</a>}
           {el.appLink ? ' for ' : 'For '}
-          {el.companyLink && <Link href={el.companyLink}>{el.company}</Link>}
+          {el.companyLink && <a href={el.companyLink}>{el.company}</a>}
         </p>
       )}
 
@@ -98,10 +96,10 @@ export default function Index() {
         <ul className={classes.flexRow}>
           <li className={classes.flexColumn}>
             <p>
-              <Link href={`tel:${props.phone}`}>{props.phone}</Link>
+              <a href={`tel:${props.phone}`}>{props.phone}</a>
             </p>
             <p>
-              <Link href={`mailto:${props.email}`}>{props.email}</Link>
+              <a href={`mailto:${props.email}`}>{props.email}</a>
             </p>
           </li>
         </ul>

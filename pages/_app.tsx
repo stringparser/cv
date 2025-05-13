@@ -2,10 +2,9 @@ import { Fragment, useEffect } from 'react';
 
 import Head from 'next/head';
 import { AppProps } from 'next/app';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 
-import theme from 'src/shared/theme';
+import theme from '../src/shared/theme';
 
 const WebApp: React.FC<AppProps> = (props) => {
   const { Component, pageProps } = props;
@@ -28,7 +27,6 @@ const WebApp: React.FC<AppProps> = (props) => {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
     </Fragment>

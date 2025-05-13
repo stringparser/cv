@@ -1,6 +1,6 @@
 import { createTheme } from '@material-ui/core';
 
-import { fontFamily } from 'src/shared/styles';
+import { fontFamily } from './styles';
 
 const theme = createTheme({
   typography: {
