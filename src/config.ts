@@ -48,9 +48,9 @@ export const experience = [
     duration: 'March 2022 - present',
     location: 'Fulda, Germany',
     description: `
-      Team: 9. B2C.
-      7 backend devs, 1 PO and 1 Scrum Master. \
-      Stack: electronjs, AWS, Kafka, TypeScript. \
+      Team: 4-9. B2C.
+      7 backend/devops devs and 1 PO. \
+      Stack: GCP, AWS, Kafka, NodeJs, TypeScript \
       Developing apps and services used \
       by the company internally and \
       in marketplaces platforms.
@@ -230,9 +230,4 @@ export default {
   login: 'stringparser',
   phone: '+34 623 181 055',
   email: 'stringparser@gmail.com',
-  address: {
-    zip: process.env.NEXT_PUBLIC_ADDRESS_ZIP,
-    city: process.env.NEXT_PUBLIC_ADDRESS_CITY,
-    street: process.env.NEXT_PUBLIC_ADDRESS_STREET,
-  },
 };

@@ -96,12 +96,6 @@ export default function Index() {
         <hr />
 
         <ul className={classes.flexRow}>
-          <li>
-            <p>{props.address.street}</p>
-            <p>
-              {props.address.zip} {props.address.city}
-            </p>
-          </li>
           <li className={classes.flexColumn}>
             <p>
               <Link href={`tel:${props.phone}`}>{props.phone}</Link>
