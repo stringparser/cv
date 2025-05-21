@@ -25,6 +25,10 @@
       "yarn format"
     ]
   },
+  "files": [
+    "dist/cv.pdf",
+    "src/config.ts"
+  ],
   "dependencies": {
     "@material-ui/core": "4.12.4",
     "jss": "^10.5.1",
