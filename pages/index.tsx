@@ -96,10 +96,18 @@ export default function Index() {
         <ul className={classes.flexRow}>
           <li className={classes.flexColumn}>
             <p>
-              <a href={`tel:${props.phone}`}>{props.phone}</a>
+              <a href={`tel:${props.phone}`} target="_blank">{props.phone}</a>
             </p>
             <p>
-              <a href={`mailto:${props.email}`}>{props.email}</a>
+              <a href={`mailto:${props.email}`} target="_blank">{props.email}</a>
+            </p>
+          </li>
+          <li className={classes.flexColumn}>
+            <p>
+              <a href={props.github} target="_blank">{cleanUrl(props.github)}</a>
+            </p>
+            <p>
+              <a href={props.linkedIn} target="_blank">{cleanUrl(props.linkedIn)}</a>
             </p>
           </li>
         </ul>
@@ -191,4 +199,9 @@ export default function Index() {
       </div>
     </div>
   );
+}
+
+
+function cleanUrl(url: string) {
+  return url.replace(/^https?[:]\/\//, '');
 }

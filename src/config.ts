@@ -26,16 +26,16 @@ export const languages = [
 ];
 
 export const technologies = [
-  'git, bash, zsh',
-  'npm, yarn, lerna',
+  'bash, zsh, git, docker, kubernetes',
+  'nodejs, npm, yarn, lerna',
+  'expressjs, koa',
   'mocha, jest, tape',
   'MongoDB, MySQL',
   'RabbitMQ, Kafka',
-  'koa, nodejs, expressjs',
   'material-ui, nextjs, jss',
   'bootstrap, playframework',
-  'browserify, gulp, webpack',
-  'React.js, React Native, redux, rxjs, GraphQL',
+  'browserify, webpack, gulp, grunt',
+  'React.js, React Native, zustand, redux, rxjs, GraphQL',
 ];
 
 export const experience = [
@@ -230,4 +230,6 @@ export default {
   login: 'stringparser',
   phone: '+34 623 181 055',
   email: 'stringparser@gmail.com',
+  github: 'https://github.com/stringparser',
+  linkedIn: 'https://linkedin.com/in/stringparser',
 };
