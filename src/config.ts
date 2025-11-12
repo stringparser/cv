@@ -26,26 +26,39 @@ export const languages = [
 ];
 
 export const technologies = [
-  'bash, zsh, git, docker, kubernetes',
+  'bash, zsh, git, docker',
   'nodejs, npm, yarn, lerna',
-  'expressjs, koa',
-  'mocha, jest, tape',
-  'MongoDB, MySQL',
-  'RabbitMQ, Kafka',
-  'material-ui, nextjs, jss',
-  'bootstrap, playframework',
-  'browserify, webpack, gulp, grunt',
+  'expressjs, koa, mocha, jest, tape',
+  'bootstrap, playframework, material-ui, nextjs, jss',
   'React.js, React Native, zustand, redux, rxjs, GraphQL',
+  'browserify, webpack, gulp, grunt',
+  'MongoDB, MySQL, RabbitMQ, Kafka',
 ];
 
 export const experience = [
+  {
+    title: 'React Native Engineer',
+    appName: 'CAPI AI',
+    appLink: 'https://www.capi.now',
+    company: 'Celtiberian',
+    companyLink: 'https://www.celtiberian.es',
+    duration: 'July 2025 - November 2025',
+    location: 'Granada, Spain',
+    description: `
+      Team: 10+. B2C. Startup \
+      Generate social media content using AI \
+      Stack: ReactNative, Next.js, Node.js, TypeScript \
+      Guide app development. Implement social login, \
+      invitation codes, setup the app for public release and help backend to setup dev, test and production environments.
+    `,
+  },
   {
     title: 'Freelance Software Engineer',
     appName: 'Lampenwelt',
     appLink: 'https://www.lampenwelt.de/',
     company: 'WEBTEAM LEIPZIG GmbH',
     companyLink: 'https://wtl.de/',
-    duration: 'March 2022 - present',
+    duration: 'March 2022 - June 2025',
     location: 'Fulda, Germany',
     description: `
       Team: 4-9. B2C.

@@ -32,6 +32,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 }) => {
   return (
     <li>
+      <p>{el.title}</p>
       <p>
         {el.duration} ({el.location})
       </p>
@@ -82,7 +83,6 @@ const useStyles = makeStyles({
 
 export default function Index() {
   const classes = useStyles();
-  const freelanceExperienceIndex = 7;
 
   return (
     <div className={classes.root}>
@@ -96,18 +96,30 @@ export default function Index() {
         <ul className={classes.flexRow}>
           <li className={classes.flexColumn}>
             <p>
-              <a href={`tel:${props.phone}`} target="_blank">{props.phone}</a>
+              <a href={`tel:${props.phone}`} target="_blank" rel="noreferrer">
+                {props.phone}
+              </a>
             </p>
             <p>
-              <a href={`mailto:${props.email}`} target="_blank">{props.email}</a>
+              <a
+                href={`mailto:${props.email}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {props.email}
+              </a>
             </p>
           </li>
           <li className={classes.flexColumn}>
             <p>
-              <a href={props.github} target="_blank">{cleanUrl(props.github)}</a>
+              <a href={props.github} target="_blank" rel="noreferrer">
+                {cleanUrl(props.github)}
+              </a>
             </p>
             <p>
-              <a href={props.linkedIn} target="_blank">{cleanUrl(props.linkedIn)}</a>
+              <a href={props.linkedIn} target="_blank" rel="noreferrer">
+                {cleanUrl(props.linkedIn)}
+              </a>
             </p>
           </li>
         </ul>
@@ -173,34 +185,22 @@ export default function Index() {
         <div>
           <h2>Experience</h2>
           <hr />
-
-          <h3>Freelance</h3>
-          <hr />
-
           <ul className={classes.flexRow}>
-            {props.experience
-              .slice(0, freelanceExperienceIndex)
-              .map((el, index) => {
-                return <ExperienceItem showTitle={false} key={index} el={el} />;
-              })}
+            {props.experience.slice(0, 6).map((el, index) => {
+              return <ExperienceItem showTitle={false} key={index} el={el} />;
+            })}
           </ul>
-
-          <h3 className={classes.pageBreak}>Fulltime</h3>
-          <hr />
-
+          <hr className={classes.pageBreak} />
           <ul className={classes.flexRow}>
-            {props.experience
-              .slice(freelanceExperienceIndex)
-              .map((el, index) => {
-                return <ExperienceItem key={index} el={el} />;
-              })}
+            {props.experience.slice(6).map((el, index) => {
+              return <ExperienceItem showTitle={false} key={index} el={el} />;
+            })}
           </ul>
         </div>
       </div>
     </div>
   );
 }
-
 
 function cleanUrl(url: string) {
   return url.replace(/^https?[:]\/\//, '');
