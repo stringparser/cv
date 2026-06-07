@@ -18,6 +18,25 @@ const sharedStyles = createStyles({
     '& > :not(:last-child)': {
       marginRight: '1.5rem',
     },
+
+    '& > *': {
+      minWidth: 0,
+      flex: '1 1 0',
+      maxWidth: '100%',
+    },
+  },
+  columnList: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+    gap: '1.5rem',
+
+    '& > li': {
+      minWidth: 0,
+      maxWidth: '100%',
+      boxSizing: 'border-box',
+      breakInside: 'avoid',
+      pageBreakInside: 'avoid',
+    },
   },
 });
 
@@ -32,10 +51,9 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 }) => {
   return (
     <li>
-      <p>{el.title}</p>
-      <p>
-        {el.duration} ({el.location})
-      </p>
+      <p className="job-title">{el.title}</p>
+      <p>{el.duration}</p>
+      <p>{el.location}</p>
       {showTitle && <h3>{el.title}</h3>}
       {el.companyLink && (
         <p>
@@ -64,8 +82,16 @@ const useStyles = makeStyles({
   ...sharedStyles,
   root: {
     width: '1300px',
+    maxWidth: '100%',
+    boxSizing: 'border-box',
     margin: '0 auto',
     padding: '2rem 2.75rem',
+
+    '@media print': {
+      width: '100%',
+      maxWidth: '100%',
+      padding: '1rem 1.25rem',
+    },
   },
   flexColumn: {
     display: 'flex',
@@ -74,10 +100,6 @@ const useStyles = makeStyles({
   },
   other: {
     color: 'here',
-  },
-  pageBreak: {
-    marginTop: '3rem',
-    pageBreakBefore: 'always',
   },
 });
 
@@ -134,7 +156,9 @@ export default function Index() {
 
           <ul>
             {props.technologies.map((el, index) => (
-              <li key={index}>{el}</li>
+              <li key={index}>
+                <p>{el}</p>
+              </li>
             ))}
           </ul>
         </div>
@@ -146,7 +170,9 @@ export default function Index() {
           <ul>
             {props.languages.map((el, index) => (
               <li key={index}>
-                {el.name}: {el.level}
+                <p>
+                  {el.name}: {el.level}
+                </p>
               </li>
             ))}
           </ul>
@@ -160,14 +186,13 @@ export default function Index() {
         <h2>Education</h2>
         <hr />
 
-        <ul className={classes.flexRow}>
+        <ul className={classes.columnList}>
           {props.education.map((el, index) => {
             return (
               <li key={index}>
-                <p>
-                  {el.duration} at {el.location}
-                </p>
-                <h3>{el.title}</h3>
+                <p className="job-title">{el.title}</p>
+                <p>{el.duration}</p>
+                <p>{el.location}</p>
                 {(el.description || '')
                   .trim()
                   .split('\n')
@@ -185,14 +210,8 @@ export default function Index() {
         <div>
           <h2>Experience</h2>
           <hr />
-          <ul className={classes.flexRow}>
-            {props.experience.slice(0, 6).map((el, index) => {
-              return <ExperienceItem showTitle={false} key={index} el={el} />;
-            })}
-          </ul>
-          <hr className={classes.pageBreak} />
-          <ul className={classes.flexRow}>
-            {props.experience.slice(6).map((el, index) => {
+          <ul className={classes.columnList}>
+            {props.experience.map((el, index) => {
               return <ExperienceItem showTitle={false} key={index} el={el} />;
             })}
           </ul>

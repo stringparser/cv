@@ -7,7 +7,7 @@ export const globalStyles = {
       direction: 'ltr',
       lineHeight: 1.65,
 
-      fontSize: '16px',
+      fontSize: '13px',
       fontFamily,
       textRendering: 'optimizeLegibility',
       scrollBehavior: 'smooth',
@@ -27,15 +27,19 @@ export const globalStyles = {
       // },
     },
 
+    p: {
+      margin: 'unset',
+      maxWidth: '100%',
+      whiteSpace: 'pre-wrap',
+      overflowWrap: 'break-word',
+      wordBreak: 'break-word',
+    },
+
     a: {
       fontWeight: 'bold',
       textDecoration: 'none',
-    },
-
-    p: {
-      margin: 'unset',
-      maxWidth: '350px',
-      whiteSpace: 'pre-wrap',
+      overflowWrap: 'break-word',
+      wordBreak: 'break-word',
     },
 
     hr: {
@@ -47,8 +51,12 @@ export const globalStyles = {
     ul: {
       margin: 0,
       padding: 0,
-      paddingLeft: '1rem',
       listStyle: 'none',
+    },
+
+    li: {
+      minWidth: 0,
+      maxWidth: '100%',
     },
 
     quote: {
@@ -61,6 +69,24 @@ export const globalStyles = {
 
     'h1, h2, h3, h4, h5, h6': {
       margin: 'unset',
+      lineHeight: 'inherit',
+    },
+
+    '.job-title': {
+      fontWeight: 700,
+    },
+
+    '@media print': {
+      body: {
+        margin: 0,
+        printColorAdjust: 'exact',
+        WebkitPrintColorAdjust: 'exact',
+      },
+    },
+
+    '@page': {
+      size: 'A4',
+      margin: '12mm',
     },
   },
 };

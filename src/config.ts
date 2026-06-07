@@ -37,7 +37,7 @@ export const technologies = [
 
 export const experience = [
   {
-    title: 'Freelance Software Engineer',
+    title: 'Software Engineer',
     appName: 'CLX Hub',
     appLink:
       'https://certinia.my.site.com/community/s/topic/0TO4Q000000XwgRWAS/clx-hub',
@@ -52,7 +52,7 @@ export const experience = [
     `,
   },
   {
-    title: 'React Native Engineer',
+    title: 'Software Engineer',
     appName: 'CAPI AI',
     appLink: 'https://www.capi.now',
     company: 'Celtiberian',
@@ -71,7 +71,7 @@ export const experience = [
     title: 'Freelance Software Engineer',
     appName: 'Lampenwelt',
     appLink: 'https://www.lampenwelt.de/',
-    company: 'WEBTEAM LEIPZIG GmbH',
+    company: 'WTL',
     companyLink: 'https://wtl.de/',
     duration: 'March 2022 - June 2025',
     location: 'Fulda, Germany',
@@ -115,7 +115,7 @@ export const experience = [
   },
   {
     title: 'Freelance Software Engineer',
-    appName: 'SC Fortuna Köln',
+    appName: 'Fortuna Köln',
     appLink:
       'https://play.google.com/store/apps/details?id=de.fortunakoeln.fortunaapp',
     company: 'Railslove GmbH',
@@ -125,7 +125,7 @@ export const experience = [
     description: `
       Team: 10+. B2B. \
       Stack: ReactNative, redux, TypeScript. \
-      SC Fortuna Köln app MVP developed in one week at the team's headquarters.
+      Fortuna Köln app MVP developed in one week at the team's headquarters.
       I setup the frontend and then worked with product, 2 designers, 5 more frontend, 2 backend devs on it together.
     `,
   },
