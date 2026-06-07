@@ -27,15 +27,30 @@ export const languages = [
 
 export const technologies = [
   'bash, zsh, git, docker',
-  'nodejs, npm, yarn, lerna',
+  'nodejs, npm, yarn, lerna, pnpm',
   'expressjs, koa, mocha, jest, tape',
   'bootstrap, playframework, material-ui, nextjs, jss',
   'React.js, React Native, zustand, redux, rxjs, GraphQL',
   'browserify, webpack, gulp, grunt',
-  'MongoDB, MySQL, RabbitMQ, Kafka',
+  'MongoDB, MySQL, PostgreSQL, RabbitMQ, Kafka',
 ];
 
 export const experience = [
+  {
+    title: 'Freelance Software Engineer',
+    appName: 'CLX Hub',
+    appLink:
+      'https://certinia.my.site.com/community/s/topic/0TO4Q000000XwgRWAS/clx-hub',
+    company: 'Certinia',
+    companyLink: 'https://www.certinia.com/',
+    duration: 'December 2025 - Present',
+    location: 'Granada, Spain',
+    description: `
+      Team: 4. B2B. 2 Full Stack Software Engineers and me. \
+      Stack: Node.js, TypeScript, React, PostgreSQL \
+      Certinia is a company pioneer providing Salesforce-native solutions.
+    `,
+  },
   {
     title: 'React Native Engineer',
     appName: 'CAPI AI',
